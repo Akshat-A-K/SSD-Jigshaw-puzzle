@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jigsaw Puzzle Maker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Jigsaw Puzzle Maker</h1>
+      <div class="controls">
+        <input id="imgFile" type="file" accept="image/*">
+        <select id="difficulty">
+          <option value="5" selected>5 pieces</option>
+          <option value="20">20 pieces</option>
+          <option value="40">40 pieces</option>
+          <option value="80">80 pieces</option>
+          <option value="100">100 pieces</option>
+        </select>
+        <button id="startBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+        <button id="darkModeToggle">Dark Mode</button>
+      </div>
+    </header>
+
+    <div class="puzzle-area">
+      <div class="board">
+        <div id="boardInner" class="board-inner"></div>
+      </div>
+      <div class="palette">
+        <div class="box">
+          <button id="downloadBtn">Download Image</button>
+          <div class="status" id="status">Pieces: 0 • Placed: 0</div>
+          <div class="progress-bar">
+            <div id="progress" class="progress-fill"></div>
+          </div>
+          <div class="info" id="info">No image loaded</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
