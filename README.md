@@ -63,14 +63,3 @@ Just open `index.html` in your browser — no server needed!
 
 ## 🌙 Dark Mode
 Click **Dark Mode / Light Mode** toggle to switch themes.
-
----
-
-## 📜 License
-This project is open source under the [MIT License](LICENSE).
-
----
-
-## 👨‍💻 Author
-**Akshat A K**  
-🔗 [GitHub Profile](https://github.com/Akshat-A-K)
