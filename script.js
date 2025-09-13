@@ -242,19 +242,36 @@ dark_btn.addEventListener("click", () => {
 });
 
 function trackUserEvents() {
-  console.log("Page viewed:", window.location.href);
+  console.log({
+    type: "view",
+    url: window.location.href,
+    timestamp: new Date().toISOString()
+  });
+
   document.addEventListener("click", (event) => {
-    event.preventDefault();
-    const element = event.target;
+    const target = event.target;
     const details = {
-      tag: element.tagName,
-      id: element.id || null,
-      class: element.className || null,
-      text: element.innerText ? element.innerText.slice(0, 50) : null,
-      timestamp: new Date().toISOString(),
+      type: "click",
+      tag: target.tagName,
+      id: target.id || null,
+      class: target.className || null,
+      text: target.innerText ? target.innerText.slice(0, 50) : null,
+      timestamp: new Date().toISOString()
     };
-    console.log("Click event:", details);
+    console.log(details);
+  });
+
+  document.addEventListener("change", (event) => {
+    const target = event.target;
+    if (target.tagName === "INPUT" && target.type === "file" && target.files.length > 0) {
+      console.log({
+        type: "file_upload",
+        fileName: target.files[0].name,
+        timestamp: new Date().toISOString()
+      });
+    }
   });
 }
 
 trackUserEvents();
+
