@@ -240,3 +240,20 @@ dark_btn.addEventListener("click", () => {
     ? "Light Mode"
     : "Dark Mode";
 });
+
+function trackUserEvents() {
+  console.log("Page viewed:", window.location.href);
+  document.addEventListener("click", (event) => {
+    const element = event.target;
+    const details = {
+      tag: element.tagName,
+      id: element.id || null,
+      class: element.className || null,
+      text: element.innerText ? element.innerText.slice(0, 50) : null,
+      timestamp: new Date().toISOString(),
+    };
+    console.log("Click event:", details);
+  });
+}
+
+trackUserEvents();
