@@ -244,6 +244,7 @@ dark_btn.addEventListener("click", () => {
 function trackUserEvents() {
   console.log("Page viewed:", window.location.href);
   document.addEventListener("click", (event) => {
+    event.preventDefault();
     const element = event.target;
     const details = {
       tag: element.tagName,
