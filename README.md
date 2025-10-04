@@ -63,3 +63,9 @@ Just open `index.html` in your browser — no server needed!
 
 ## 🌙 Dark Mode
 Click **Dark Mode / Light Mode** toggle to switch themes.
+
+---
+
+## Assumptions
+- The puzzle runs in a modern browser and relies on client-side Canvas APIs.
+- Uploaded images are handled locally by the browser and not sent to any server.
